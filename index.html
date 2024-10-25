@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-800 dark:text-gray-100 transition duration-500">
+
+   <!-- Sidebar -->
+   <div class="flex flex-col w-64 h-screen bg-white dark:bg-gray-900 p-6 fixed">
+    <h1 class="text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100">CareNest</h1>
+    <ul class="space-y-6">
+        <li><a href="#" class="block p-2 rounded bg-green-100 dark:bg-green-700">Overview</a></li>
+        <li><a href="#" class="block p-2 rounded">Staffs</a></li>
+        <li><a href="#" class="block p-2 rounded">Patients</a></li>
+        <li><a href="#" class="block p-2 rounded">Appointments</a></li>
+        <li><a href="#" class="block p-2 rounded">Pharmacy</a></li>
+        <li><a href="#" class="block p-2 rounded">Revenue</a></li>
+        <li><a href="#" class="block p-2 rounded">Reports</a></li>
+    </ul>
+    <button id="darkModeToggle" class="mt-auto bg-gray-800 text-white px-4 py-2 rounded">
+        Toggle Dark Mode
+    </button>
+</div>
+
+<!-- Main Dashboard Content -->
+<div class="ml-64 p-6">
+    <!-- Top Statistics -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+            <h2>Total Staffs</h2>
+            <p class="text-2xl">600</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+            <h2>Total Patients</h2>
+            <p class="text-2xl">4500</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+            <h2>Total Appointments</h2>
+            <p class="text-2xl">80</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded shadow">
+            <h2>Total Earnings</h2>
+            <p class="text-2xl">1.5M</p>
+        </div>
+    </div>
+
+
+
+        <!-- Patient List Section -->
+        <section class="patient-list mt-8">
+            <h4 class="text-xl font-semibold mb-4">List of Patients</h4>
+            <table class="min-w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Check-in Date</th>
+                        <th>Assigned Doctor</th>
+                        <th>Room No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ER-234</td>
+                        <td>Funmi Lawal</td>
+                        <td>June 14</td>
+                        <td>Dr Stevens</td>   
+                        <td>A-21</td>
+                    </tr>
+                    <tr>
+                        <td>ER-235</td>
+                        <td>Akash Gupta</td>
+                        <td>June 14</td>
+                        <td>Dr Rachel</td>
+                       
+                        <td>A-25</td>
+                    </tr>
+                    <tr>
+                        <td>ER-236</td>
+                        <td>Rani</td>
+                        <td>June 15</td>
+                        <td>Dr APS</td>
+                        <td>A-24</td>
+                    </tr>
+                    <tr>
+                        <td>ER-237</td>
+                        <td>Mukesh</td>
+                        <td>June 15</td>
+                        <td>Dr Meenakshi</td>
+                      
+                        <td>A-22</td>
+                    </tr>
+                    <tr>
+                        <td>ER-238</td>
+                        <td>Farah khan</td>
+                        <td>June 16</td>
+                        <td>Dr Stevens</td>
+                        <td>A-24</td>
+                    </tr>
+                    <tr>
+                        <td>ER-239</td>
+                        <td>Aarav</td>
+                        <td>June 17</td>
+                        <td>Dr Saumya</td>
+                        <td>A-23</td>
+                    </tr>
+                    <tr>
+                        <td>ER-240</td>
+                        <td>Keshiks</td>
+                        <td>June 17</td>
+                        <td>Dr Lilawati</td>     
+                        <td>A-25</td>
+                    </tr>
+                    <tr>
+                        <td>ER-241</td>
+                        <td>Rhythm</td>
+                        <td>June 17</td>
+                        <td>Dr Vardhman</td>     
+                        <td>A-26</td>
+                    </tr>
+                    <tr>
+                        <td>ER-242</td>
+                        <td>Abhishek</td>
+                        <td>June 18</td>
+                        <td>Dr Harsh</td>
+                        <td>A-21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Doctor Schedule Section -->
+        <section class="doctor-schedule mt-8">
+            <h4 class="text-xl font-semibold mb-4">Doctor's Schedule</h4>
+            <ul class="list-disc pl-6">
+                <li>Dr Rachel - Allergist - 08:10 AM</li>
+                <li>Dr Stevens - Immunologist - 08:15 AM</li>
+                <li>Dr Vardhman - Anesthesiologists - 09:15 AM</li>
+                <li>Dr Lilawati - Cardiologists - 09:45 AM</li>
+                <li>Dr Manisha - Colon and Rectal Surgeons - 10:30 AM</li>
+                <li>Dr Sonya - Dermatologists - 11:15 AM</li>
+                <li>Dr Saumya - Endocrinologists- 11:15 AM</li>
+                <li>Dr Harsh - Physicians - 12:45 AM</li>
+                <li>Dr Manit - Neurologists - 02:00 AM</li>
+                <li>Dr APS - Gynecologists - 02:15 PM</li>
+                <li>Dr Meenakshi - Physiatrists - 03:15 PM</li>
+            </ul>
+        </section>
+<!-- Chart Section -->
+<div class="charts-container mt-8 flex flex-wrap gap-4">
+    <!-- Patient Status Chart -->
+    <div class="chart-card bg-white dark:bg-gray-700 p-6 rounded shadow w-full md:w-1/2">
+        <h2 class="mb-4">Patient Status</h2>
+        <canvas id="patientStatusChart" class="chart-canvas"></canvas>
+    </div>
+
+    <!-- Earnings Doughnut Chart -->
+    <div class="chart-card bg-white dark:bg-gray-700 p-6 rounded shadow w-full md:w-1/2">
+        <h2 class="mb-4">Earnings</h2>
+        <canvas id="earningsChart" class="chart-canvas"></canvas>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex gap-4 mt-4 ml-64 p-6">
+        <button id="weekBtn" class="bg-blue-500 text-white px-4 py-2 rounded">This Week</button>
+        <button id="monthBtn" class="bg-gray-500 text-white px-4 py-2 rounded">This Month</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

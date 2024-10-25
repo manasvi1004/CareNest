@@ -1,0 +1,137 @@
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* General Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Table Header Styles */
+table thead {
+    background-color: #3B82F6; /* Blue background for header */
+    color: #FFFFFF; /* White text color */
+}
+
+table th, table td {
+    padding: 12px; /* Padding for table cells */
+    border: 1px solid #E5E7EB; /* Light gray border */
+    text-align: left; /* Left-align text */
+}
+
+/* Light Mode Styles */
+body {
+    background-color: #F9FAFB;
+    color: #1F2937;
+}
+
+table tr:nth-child(even) {
+    background-color: #F1F5F9; /* Light gray for even rows */
+}
+
+table tr:nth-child(odd) {
+    background-color: #FFFFFF; /* White for odd rows */
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #1F2937;
+    color: #E5E7EB;
+}
+
+body.dark table thead {
+    background-color: #3B82F6; /* Keep the blue header for dark mode */
+}
+
+body.dark table th, body.dark table td {
+    border: 1px solid #374151; /* Darker border for dark mode */
+}
+
+body.dark table tr:nth-child(even) {
+    background-color: #374151; /* Dark gray for even rows */
+}
+
+body.dark table tr:nth-child(odd) {
+    background-color: #2A3036; /* Darker shade for odd rows */
+}
+
+/* Hover Effects */
+table tr:hover {
+    background-color: #E5E7EB; /* Light gray on hover in light mode */
+}
+
+body.dark table tr:hover {
+    background-color: #3B82F6; /* Blue on hover in dark mode */
+}
+
+/* Light Mode Styles */
+body {
+    background-color: #F9FAFB;
+    color: #1F2937;
+}
+
+.bg-white {
+    background-color: #FFFFFF;
+}
+
+.bg-gray-100 {
+    background-color: #F9FAFB;
+}
+
+.bg-gray-700 {
+    background-color: #374151;
+}
+
+.bg-blue-500 {
+    background-color: #3B82F6;
+}
+
+.bg-green-100 {
+    background-color: #D1FAE5;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #1F2937;
+    color: #E5E7EB;
+}
+
+.dark .bg-white {
+    background-color: #374151; /* dark card color */
+}
+
+.dark .bg-gray-100 {
+    background-color: #1F2937; /* dark background */
+}
+
+.dark .bg-gray-700 {
+    background-color: #1F2937; /* same as background */
+}
+
+.dark .bg-blue-500 {
+    background-color: #3B82F6; /* keep button color consistent */
+}
+
+.dark .bg-green-700 {
+    background-color: #064E3B; /* darker green for active state */
+}
+/* Container to align charts side by side */
+.charts-container {
+    display: flex;
+    gap: 16px; /* space between charts */
+    flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+/* Each chart card styling */
+.chart-card {
+    flex: 1 1 45%; /* take up half the width on medium screens */
+    max-width: 400px; /* limit max width for compact look */
+}
+
+/* Canvas style */
+.chart-canvas {
+    max-width: 100%; /* ensure it fits within the container */
+    max-height: 300px; /* reduce height for a compact layout */
+}
